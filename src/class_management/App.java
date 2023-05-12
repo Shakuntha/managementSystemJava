@@ -920,18 +920,25 @@ public class App extends javax.swing.JFrame {
         {
             Class.forName("com.mysql.jbdc.Driver");
             sqlConn = DriverManager.getConnection(dataConn,username,password);
-            pst = sqlConn.prepareStatement("insert into lms(S_NIC,S_Frist_Name,S_Last_Name,S_Year,S_Month,S_Day,S_Address_Number,S_Lane,S_City)");
+            pst = sqlConn.prepareStatement("insert into lms(S_NIC,S_Frist_Name,S_Last_Name,S_Year,S_Month,S_Day,S_Address_Number,S_Lane,S_City)value(?,?,?,?,?,?,?)");
             
             pst.setString(1, jS_FName.getText());
-            pst.setString(1, jS_LName.getText());
-            pst.setString(1, jS_NIC.getText());
-            pst.setString(1, jS_Address.getText());
-            pst.setString(1, jS_Lane.getText());
-            pst.setString(1, jS_City.getText());
-            pst.setString(1, jS_Mobile.getText());
-            
+            pst.setString(2, jS_LName.getText());
+            pst.setString(3, jS_NIC.getText());
+            pst.setString(4, jS_Address.getText());
+            pst.setString(5, jS_Lane.getText());
+            pst.setString(6, jS_City.getText());
+            pst.setString(7, jS_Mobile.getText());
+                
             pst.executeUpdate();
             JOptionPane.showMessageDialog(this, "Record Added");
+        }
+        
+
+        catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Java_MysqlConn.class.getName()).log(java.util.logging.Level.SEVERE,null, ex);
+        } catch (SQLException ex) {
+            java.util.logging.Logger.getLogger(Java_MysqlConn.class.getName()).log(java.util.logging.Level.SEVERE,null, ex);
         }
     }//GEN-LAST:event_jS_Registration_SubmitActionPerformed
 
