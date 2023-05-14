@@ -1078,10 +1078,11 @@ public class App extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jS_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jS_SearchActionPerformed
@@ -1092,8 +1093,8 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","naughty123");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
             Statement st=con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM `studentmanagement`.`student` WHERE `S_NIC` = '"+jS_Search.getText()+"'");
             if (rs.next()) {
@@ -1145,8 +1146,8 @@ public class App extends javax.swing.JFrame {
     private void jS_Registration_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jS_Registration_SubmitActionPerformed
         // TODO add your handling code here:
         try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","naughty123");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
             Statement st=con.createStatement();
             boolean b=st.execute("INSERT INTO `studentmanagement`.`student` ( `S_NIC`, `S_First_Name`, `S_Last_Name`, `S_Year`, `S_Month`, `S_Day`, `S_Address_Number`, `S_Lane`, `S_City`) VALUES ( '"+jS_NIC.getText()+"', '"+jS_FName.getText()+"', '"+jS_LName.getText()+"', '"+jS_Year.getText()+"', '"+jS_Month.getText()+"', '"+jS_Day.getText()+"', '"+jS_Address.getText()+"', '"+jS_Lane.getText()+"', '"+jS_City.getText()+"');");
             if(!b) {
@@ -1315,8 +1316,8 @@ public class App extends javax.swing.JFrame {
     private void jT_Registration_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_Registration_ActionPerformed
         // TODO add your handling code here:
          try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","naughty123");
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
             Statement st=con.createStatement();
             boolean b=st.execute("INSERT INTO `studentmanagement`.`teacher` ( `T_NIC`, `T_First_Name`, `T_second_Name`, `T_Address_Number`, `T_City`, `T_Road`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_Fname.getText()+"', '"+jT_Lname.getText()+"', '"+jT_address_no.getText()+"', '"+jT_City.getText()+"', '"+jT_Lane.getText()+"');");
             boolean c=st.execute("INSERT INTO `studentmanagement`.`t_number` ( `T_NIC`, `phone_number`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_TPnumber.getText()+"' );");
