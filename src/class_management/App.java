@@ -128,7 +128,7 @@ public class App extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        jEnroll = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
@@ -155,21 +155,21 @@ public class App extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
-        jTextField12 = new javax.swing.JTextField();
+        jT_Lname = new javax.swing.JTextField();
+        jT_Fname = new javax.swing.JTextField();
+        jT_NIC = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jTextField14 = new javax.swing.JTextField();
-        jTextField15 = new javax.swing.JTextField();
+        jT_TPnumber = new javax.swing.JTextField();
+        jT_City = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jTextField16 = new javax.swing.JTextField();
-        jTextField17 = new javax.swing.JTextField();
+        jT_Lane = new javax.swing.JTextField();
+        jT_address_no = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
+        jT_Registration = new javax.swing.JButton();
+        jT_Register_cancel = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -321,7 +321,7 @@ public class App extends javax.swing.JFrame {
                         .addComponent(jS_Search, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)))
-                .addContainerGap(379, Short.MAX_VALUE))
+                .addContainerGap(420, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -479,7 +479,7 @@ public class App extends javax.swing.JFrame {
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                                         .addGap(36, 36, 36)
                                         .addComponent(jS_City, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -506,7 +506,7 @@ public class App extends javax.swing.JFrame {
                                             .addComponent(jS_Address)
                                             .addComponent(jS_Lane, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                                        .addComponent(jLabel28, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
                                         .addGap(36, 36, 36)
                                         .addComponent(jS_Mobile, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addGap(83, 83, 83))
@@ -609,10 +609,10 @@ public class App extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Submit");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jEnroll.setText("Submit");
+        jEnroll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jEnrollActionPerformed(evt);
             }
         });
 
@@ -640,12 +640,12 @@ public class App extends javax.swing.JFrame {
                             .addComponent(jLabel18)
                             .addGap(44, 44, 44)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(725, Short.MAX_VALUE))
+                .addContainerGap(766, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
                 .addGap(26, 26, 26)
-                .addComponent(jButton1)
+                .addComponent(jEnroll)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -663,7 +663,7 @@ public class App extends javax.swing.JFrame {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 310, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(jEnroll)
                     .addComponent(jButton3))
                 .addContainerGap())
         );
@@ -806,7 +806,7 @@ public class App extends javax.swing.JFrame {
                                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton6)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -875,21 +875,21 @@ public class App extends javax.swing.JFrame {
         jLabel26.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel26.setText("Last Name");
 
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        jT_Lname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                jT_LnameActionPerformed(evt);
             }
         });
 
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
+        jT_Fname.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+                jT_FnameActionPerformed(evt);
             }
         });
 
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        jT_NIC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                jT_NICActionPerformed(evt);
             }
         });
 
@@ -899,15 +899,15 @@ public class App extends javax.swing.JFrame {
         jLabel29.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel29.setText("Mobile No.");
 
-        jTextField14.addActionListener(new java.awt.event.ActionListener() {
+        jT_TPnumber.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField14ActionPerformed(evt);
+                jT_TPnumberActionPerformed(evt);
             }
         });
 
-        jTextField15.addActionListener(new java.awt.event.ActionListener() {
+        jT_City.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField15ActionPerformed(evt);
+                jT_CityActionPerformed(evt);
             }
         });
 
@@ -917,15 +917,15 @@ public class App extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel31.setText("Lane");
 
-        jTextField16.addActionListener(new java.awt.event.ActionListener() {
+        jT_Lane.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField16ActionPerformed(evt);
+                jT_LaneActionPerformed(evt);
             }
         });
 
-        jTextField17.addActionListener(new java.awt.event.ActionListener() {
+        jT_address_no.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField17ActionPerformed(evt);
+                jT_address_noActionPerformed(evt);
             }
         });
 
@@ -935,9 +935,19 @@ public class App extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel33.setText("Address");
 
-        jButton9.setText("Submit");
+        jT_Registration.setText("Submit");
+        jT_Registration.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jT_Registration_ActionPerformed(evt);
+            }
+        });
 
-        jButton10.setText("Cancel");
+        jT_Register_cancel.setText("Cancel");
+        jT_Register_cancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jT_Register_cancel_ActionPerform(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -956,30 +966,30 @@ public class App extends javax.swing.JFrame {
                             .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(57, 57, 57)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField10)
-                            .addComponent(jTextField11)
-                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jT_Lname)
+                            .addComponent(jT_Fname)
+                            .addComponent(jT_NIC, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addComponent(jLabel30, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel32, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jLabel31, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 96, Short.MAX_VALUE)
                             .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField17)
-                                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jTextField15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jT_address_no)
+                                    .addComponent(jT_Lane, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jT_City, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                             .addGap(123, 123, 123)
-                            .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jT_TPnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(711, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton10)
+                .addComponent(jT_Register_cancel)
                 .addGap(18, 18, 18)
-                .addComponent(jButton9)
+                .addComponent(jT_Registration)
                 .addContainerGap())
         );
         jPanel6Layout.setVerticalGroup(
@@ -989,38 +999,38 @@ public class App extends javax.swing.JFrame {
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jT_Fname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel25))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jT_Lname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel26))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jT_NIC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel29)
-                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_TPnumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel33)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel32)
-                    .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_address_no, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel31)
-                    .addComponent(jTextField16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_Lane, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
-                    .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jT_City, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton9)
-                    .addComponent(jButton10))
+                    .addComponent(jT_Registration)
+                    .addComponent(jT_Register_cancel))
                 .addContainerGap())
         );
 
@@ -1068,7 +1078,7 @@ public class App extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE))
         );
 
         pack();
@@ -1082,10 +1092,10 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/lms","root","Bingo456++");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","naughty123");
             Statement st=con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM `lms`.`student` WHERE `S_NIC` = '"+jS_Search.getText()+"'");
+            ResultSet rs = st.executeQuery("SELECT * FROM `studentmanagement`.`student` WHERE `S_NIC` = '"+jS_Search.getText()+"'");
             if (rs.next()) {
                 // name
                 String valueFname = rs.getString("S_First_Name");
@@ -1135,10 +1145,10 @@ public class App extends javax.swing.JFrame {
     private void jS_Registration_SubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jS_Registration_SubmitActionPerformed
         // TODO add your handling code here:
         try{
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/lms","root","Bingo456++");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","naughty123");
             Statement st=con.createStatement();
-            boolean b=st.execute("INSERT INTO `lms`.`student` ( `S_NIC`, `S_First_Name`, `S_Last_Name`, `S_Year`, `S_Month`, `S_Day`, `S_Address_Number`, `S_Lane`, `S_City`) VALUES ( '"+jS_NIC.getText()+"', '"+jS_FName.getText()+"', '"+jS_LName.getText()+"', '"+jS_Year.getText()+"', '"+jS_Month.getText()+"', '"+jS_Day.getText()+"', '"+jS_Address.getText()+"', '"+jS_Lane.getText()+"', '"+jS_City.getText()+"');");
+            boolean b=st.execute("INSERT INTO `studentmanagement`.`student` ( `S_NIC`, `S_First_Name`, `S_Last_Name`, `S_Year`, `S_Month`, `S_Day`, `S_Address_Number`, `S_Lane`, `S_City`) VALUES ( '"+jS_NIC.getText()+"', '"+jS_FName.getText()+"', '"+jS_LName.getText()+"', '"+jS_Year.getText()+"', '"+jS_Month.getText()+"', '"+jS_Day.getText()+"', '"+jS_Address.getText()+"', '"+jS_Lane.getText()+"', '"+jS_City.getText()+"');");
             if(!b) {
                 JOptionPane.showMessageDialog(this, "inserted");
             }else {
@@ -1197,9 +1207,10 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jEnrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEnrollActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+    }//GEN-LAST:event_jEnrollActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
@@ -1237,37 +1248,37 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox7ActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void jT_LnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_LnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_jT_LnameActionPerformed
 
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
+    private void jT_FnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_FnameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_jT_FnameActionPerformed
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void jT_NICActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_NICActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_jT_NICActionPerformed
 
     private void jS_MobileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jS_MobileActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jS_MobileActionPerformed
 
-    private void jTextField14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField14ActionPerformed
+    private void jT_TPnumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_TPnumberActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField14ActionPerformed
+    }//GEN-LAST:event_jT_TPnumberActionPerformed
 
-    private void jTextField15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField15ActionPerformed
+    private void jT_CityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_CityActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField15ActionPerformed
+    }//GEN-LAST:event_jT_CityActionPerformed
 
-    private void jTextField16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField16ActionPerformed
+    private void jT_LaneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_LaneActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField16ActionPerformed
+    }//GEN-LAST:event_jT_LaneActionPerformed
 
-    private void jTextField17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField17ActionPerformed
+    private void jT_address_noActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_address_noActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField17ActionPerformed
+    }//GEN-LAST:event_jT_address_noActionPerformed
 
     private void jS_DayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jS_DayActionPerformed
         // TODO add your handling code here:
@@ -1300,6 +1311,39 @@ public class App extends javax.swing.JFrame {
     private void jS_City_SearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jS_City_SearchActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jS_City_SearchActionPerformed
+
+    private void jT_Registration_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_Registration_ActionPerformed
+        // TODO add your handling code here:
+         try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","naughty123");
+            Statement st=con.createStatement();
+            boolean b=st.execute("INSERT INTO `studentmanagement`.`teacher` ( `T_NIC`, `T_First_Name`, `T_second_Name`, `T_Address_Number`, `T_City`, `T_Road`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_Fname.getText()+"', '"+jT_Lname.getText()+"', '"+jT_address_no.getText()+"', '"+jT_City.getText()+"', '"+jT_Lane.getText()+"');");
+            boolean c=st.execute("INSERT INTO `studentmanagement`.`t_number` ( `T_NIC`, `phone_number`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_TPnumber.getText()+"' );");
+            if(!b) {
+                JOptionPane.showMessageDialog(this, "inserted Successfuly");
+            }else {
+                JOptionPane.showMessageDialog(this, "error");
+            }
+            if(!c) {
+                JOptionPane.showMessageDialog(this, "inserted Successfuly");
+            }else {
+                JOptionPane.showMessageDialog(this, "error");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+    }//GEN-LAST:event_jT_Registration_ActionPerformed
+}
+    private void jT_Register_cancel_ActionPerform(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_Register_cancel_ActionPerform
+        // TODO add your handling code here:
+        jT_Fname.setText("");
+        jT_Lname.setText("");
+        jT_NIC.setText("");
+        jT_address_no.setText("");
+        jT_City.setText("");
+        jT_Lane.setText("");
+        jT_TPnumber.setText("");
+    }//GEN-LAST:event_jT_Register_cancel_ActionPerform
 
     /**
      * @param args the command line arguments
@@ -1336,17 +1380,17 @@ public class App extends javax.swing.JFrame {
             }
         });
     }
-
+    
+  
+   
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton S_Register_Cancel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1354,6 +1398,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
     private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JButton jEnroll;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -1423,15 +1468,17 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JTextField jS_Year;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JTextField jT_City;
+    private javax.swing.JTextField jT_Fname;
+    private javax.swing.JTextField jT_Lane;
+    private javax.swing.JTextField jT_Lname;
+    private javax.swing.JTextField jT_NIC;
+    private javax.swing.JButton jT_Register_cancel;
+    private javax.swing.JButton jT_Registration;
+    private javax.swing.JTextField jT_TPnumber;
+    private javax.swing.JTextField jT_address_no;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField15;
-    private javax.swing.JTextField jTextField16;
-    private javax.swing.JTextField jTextField17;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
