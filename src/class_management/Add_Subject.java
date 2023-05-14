@@ -4,6 +4,11 @@
  */
 package class_management;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author irosh
@@ -46,6 +51,11 @@ public class Add_Subject extends javax.swing.JFrame {
         jLabel3.setText("Subject Name");
 
         jButton1.setText("Add Subject");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jAdd_S_Cancel.setText("Cancel");
         jAdd_S_Cancel.addActionListener(new java.awt.event.ActionListener() {
@@ -110,6 +120,22 @@ public class Add_Subject extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_jAdd_S_CancelActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement","root","1234");
+            Statement st=con.createStatement();
+            boolean b=st.execute("INSERT INTO `studentmanagement`.`subject` ( `Sub_Id`, `Sub_Name`) VALUES ( '"+jTextField1.getText()+"', '"+jTextField2.getText()+"');");
+            if(!b) {
+                JOptionPane.showMessageDialog(this, "inserted");
+            }else {
+                JOptionPane.showMessageDialog(this, "error");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
