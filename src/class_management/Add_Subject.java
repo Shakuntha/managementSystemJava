@@ -128,9 +128,9 @@ public class Add_Subject extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement","root","Bingo456++");
+            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","u844237779_javaProject","java123@@@A");
             Statement st=con.createStatement();
-            boolean b=st.execute("INSERT INTO `studentmanagement`.`subject` ( `Sub_Id`, `Sub_Name`) VALUES ( '"+jTextField1.getText()+"', '"+jTextField2.getText()+"');");
+            boolean b=st.execute("INSERT INTO `u844237779_java`.`subject` ( `Sub_Id`, `Sub_Name`) VALUES ( '"+jTextField1.getText()+"', '"+jTextField2.getText()+"');");
             if(!b) {
                 JOptionPane.showMessageDialog(this, "inserted");
             }else {

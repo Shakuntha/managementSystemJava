@@ -1130,9 +1130,9 @@ public class App extends javax.swing.JFrame {
 
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
+            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","u844237779_javaProject","java123@@@A");
             Statement st=con.createStatement();
-            ResultSet rs = st.executeQuery("SELECT * FROM `studentmanagement`.`student` WHERE `S_NIC` = '"+jS_Search.getText()+"'");
+            ResultSet rs = st.executeQuery("SELECT * FROM `u844237779_java`.`student` WHERE `S_NIC` = '"+jS_Search.getText()+"'");
             if (rs.next()) {
                 // name
                 String valueFname = rs.getString("S_First_Name");
@@ -1353,10 +1353,10 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
          try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","javaProject","java123@@@A");
+            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","u844237779_javaProject","java123@@@A");
             Statement st=con.createStatement();
-            boolean b=st.execute("INSERT INTO `studentmanagement`.`teacher` ( `T_NIC`, `T_First_Name`, `T_second_Name`, `T_Address_Number`, `T_City`, `T_Road`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_Fname.getText()+"', '"+jT_Lname.getText()+"', '"+jT_address_no.getText()+"', '"+jT_City.getText()+"', '"+jT_Lane.getText()+"');");
-            boolean c=st.execute("INSERT INTO `studentmanagement`.`t_number` ( `T_NIC`, `phone_number`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_TPnumber.getText()+"' );");
+            boolean b=st.execute("INSERT INTO `u844237779_java`.`teacher` ( `T_NIC`, `T_First_Name`, `T_second_Name`, `T_Address_Number`, `T_City`, `T_Road`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_Fname.getText()+"', '"+jT_Lname.getText()+"', '"+jT_address_no.getText()+"', '"+jT_City.getText()+"', '"+jT_Lane.getText()+"');");
+            boolean c=st.execute("INSERT INTO `u844237779_java`.`t_number` ( `T_NIC`, `phone_number`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_TPnumber.getText()+"' );");
             if(!b) {
                 JOptionPane.showMessageDialog(this, "inserted Successfuly");
             }else {
@@ -1410,12 +1410,12 @@ public class App extends javax.swing.JFrame {
         ResultSet subRes = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
+            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","u844237779_javaProject","java123@@@A");
             Statement st=con.createStatement();
-            ResultSet res=st.executeQuery("SELECT `class_name`,`start_time`,`end_time`,`class_fee`,`sub_id` FROM `studentmanagement`.`class`;");
+            ResultSet res=st.executeQuery("SELECT `class_name`,`start_time`,`end_time`,`class_fee`,`sub_id` FROM `u844237779_java`.`class`;");
             try{
                 Statement subSt=con.createStatement();
-                subRes=subSt.executeQuery("SELECT `sub_name` FROM `studentmanagement`.`class` INNER JOIN `studentmanagement`.`subject` ON `class`.`sub_id` = `subject`.`sub_id`;");
+                subRes=subSt.executeQuery("SELECT `sub_name` FROM `u844237779_java`.`class` INNER JOIN `u844237779_java`.`subject` ON `class`.`sub_id` = `subject`.`sub_id`;");
                 while (subRes.next()){
                     sublist.add(subRes.getString("sub_name"));
                 }
@@ -1448,9 +1448,9 @@ public class App extends javax.swing.JFrame {
     public void fillcombo(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
+            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","u844237779_javaProject","java123@@@A");
             Statement st=con.createStatement();
-            ResultSet res=st.executeQuery("SELECT `sub_id`,`sub_name` FROM `studentmanagement`.`subject`;");
+            ResultSet res=st.executeQuery("SELECT `sub_id`,`sub_name` FROM `u844237779_java`.`subject`;");
             Vector vector=new Vector();
             while (res.next()){
                 vector.addElement(new Item(res.getInt("sub_id"),res.getString("sub_name")));
