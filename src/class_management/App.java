@@ -134,25 +134,25 @@ public class App extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel15 = new javax.swing.JLabel();
-        jTextField9 = new javax.swing.JTextField();
+        class_name_button = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jC_B_Subjects = new javax.swing.JComboBox<>();
         jAdd_Subject_popup = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        start_time_button2 = new javax.swing.JComboBox<>();
+        start_time_button1 = new javax.swing.JComboBox<>();
         jLabel23 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        end_time_button1 = new javax.swing.JComboBox<>();
+        end_time_button2 = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
+        class_fees = new javax.swing.JSpinner();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jT_Class = new javax.swing.JTable();
-        jTextField10 = new javax.swing.JTextField();
+        teacher_nic_btn = new javax.swing.JTextField();
         jB_Refrsh = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
@@ -683,9 +683,9 @@ public class App extends javax.swing.JFrame {
         jLabel15.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel15.setText("Create Class");
 
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        class_name_button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                class_name_buttonActionPerformed(evt);
             }
         });
 
@@ -724,34 +724,34 @@ public class App extends javax.swing.JFrame {
         jLabel22.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel22.setText("Start Time");
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        start_time_button2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
+        start_time_button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                start_time_button2ActionPerformed(evt);
             }
         });
 
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8.00", "8.30", "9.00", "9.30", "10.00", "10.30", "11.00", "11.30", "12.00", " " }));
-        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+        start_time_button1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8.00", "8.30", "9.00", "9.30", "10.00", "10.30", "11.00", "11.30", "12.00", " " }));
+        start_time_button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox5ActionPerformed(evt);
+                start_time_button1ActionPerformed(evt);
             }
         });
 
         jLabel23.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel23.setText("End Time");
 
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8.00", "8.30", "9.00", "9.30", "10.00", "10.30", "11.00", "11.30", "12.00", " " }));
-        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+        end_time_button1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "8.00", "8.30", "9.00", "9.30", "10.00", "10.30", "11.00", "11.30", "12.00", " " }));
+        end_time_button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox6ActionPerformed(evt);
+                end_time_button1ActionPerformed(evt);
             }
         });
 
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
-        jComboBox7.addActionListener(new java.awt.event.ActionListener() {
+        end_time_button2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
+        end_time_button2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox7ActionPerformed(evt);
+                end_time_button2ActionPerformed(evt);
             }
         });
 
@@ -759,6 +759,11 @@ public class App extends javax.swing.JFrame {
         jLabel24.setText("Class Fee");
 
         jButton7.setText("Submit");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("Cancel");
 
@@ -780,9 +785,9 @@ public class App extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jT_Class);
 
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        teacher_nic_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                teacher_nic_btnActionPerformed(evt);
             }
         });
 
@@ -805,7 +810,7 @@ public class App extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel19)
                                 .addGap(43, 43, 43)
-                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(class_name_button, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel15)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
@@ -823,16 +828,16 @@ public class App extends javax.swing.JFrame {
                                         .addComponent(jLabel24)
                                         .addGap(43, 43, 43)))
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jSpinner1)
+                                    .addComponent(class_fees)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(start_time_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(start_time_button2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(end_time_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(end_time_button2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(teacher_nic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(jLabel23)
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel20)
@@ -861,7 +866,7 @@ public class App extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel19)
-                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(class_name_button, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -870,21 +875,21 @@ public class App extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(teacher_nic_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(start_time_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(start_time_button2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(end_time_button1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(end_time_button2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jSpinner1)
+                                .addComponent(class_fees)
                                 .addGap(1, 1, 1))
                             .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(106, 106, 106))
@@ -1114,7 +1119,7 @@ public class App extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE))
         );
 
         pack();
@@ -1253,9 +1258,9 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void class_name_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_class_name_buttonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
+    }//GEN-LAST:event_class_name_buttonActionPerformed
 
     private void jC_B_SubjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jC_B_SubjectsActionPerformed
         // TODO add your handling code here:
@@ -1269,21 +1274,21 @@ public class App extends javax.swing.JFrame {
         addS.show();
     }//GEN-LAST:event_jAdd_Subject_popupActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void start_time_button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_time_button2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_start_time_button2ActionPerformed
 
-    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+    private void start_time_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_start_time_button1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox5ActionPerformed
+    }//GEN-LAST:event_start_time_button1ActionPerformed
 
-    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+    private void end_time_button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end_time_button1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox6ActionPerformed
+    }//GEN-LAST:event_end_time_button1ActionPerformed
 
-    private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox7ActionPerformed
+    private void end_time_button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_end_time_button2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox7ActionPerformed
+    }//GEN-LAST:event_end_time_button2ActionPerformed
 
     private void jT_LnameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jT_LnameActionPerformed
         // TODO add your handling code here:
@@ -1382,9 +1387,9 @@ public class App extends javax.swing.JFrame {
         jT_TPnumber.setText("");
     }//GEN-LAST:event_jT_Register_cancel_ActionPerform
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void teacher_nic_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_teacher_nic_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_teacher_nic_btnActionPerformed
 
     private void jC_B_SubjectsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jC_B_SubjectsItemStateChanged
         // TODO add your handling code here:
@@ -1441,6 +1446,22 @@ public class App extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }//GEN-LAST:event_jB_RefrshActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","u844237779_javaProject","java123@@@A");
+            Statement st=con.createStatement();
+            boolean b=st.execute("INSERT INTO `u844237779_java`.`class` ( `Class_Name`, `Start_Time`, `End_Time`, `Class_Fee`, `T_NIC`, `Sub_Id`) VALUES ( '"+class_name_button.getText()+"', '"+start_time_button1.getSelectedItem()+" "+start_time_button2.getSelectedItem()+"', '"+end_time_button1.getSelectedItem()+" "+end_time_button2.getSelectedItem()+"', '"+class_fees.getValue()+"', '"+teacher_nic_btn.getText()+"', '"+teacher_nic_btn.getText()+"' );");
+            if(!b) {
+                JOptionPane.showMessageDialog(this, "inserted Successfuly");
+            }else {
+                JOptionPane.showMessageDialog(this, "error");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }               
+    }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1500,6 +1521,10 @@ public class App extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton S_Register_Cancel;
+    private javax.swing.JSpinner class_fees;
+    private javax.swing.JTextField class_name_button;
+    private javax.swing.JComboBox<String> end_time_button1;
+    private javax.swing.JComboBox<String> end_time_button2;
     private javax.swing.JButton jAdd_Subject_popup;
     private javax.swing.JButton jB_Refrsh;
     private javax.swing.JButton jButton3;
@@ -1508,10 +1533,6 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JComboBox<String> jC_B_Subjects;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
     private javax.swing.JButton jEnroll;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1581,7 +1602,6 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JTextField jS_Search;
     private javax.swing.JTextField jS_Year;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jT_City;
     private javax.swing.JTable jT_Class;
     private javax.swing.JTextField jT_Fname;
@@ -1593,9 +1613,10 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JTextField jT_TPnumber;
     private javax.swing.JTextField jT_address_no;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
+    private javax.swing.JComboBox<String> start_time_button1;
+    private javax.swing.JComboBox<String> start_time_button2;
+    private javax.swing.JTextField teacher_nic_btn;
     // End of variables declaration//GEN-END:variables
 }
 
