@@ -18,7 +18,9 @@ import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Vector;
 import javax.swing.JOptionPane;
+import javax.swing.DefaultComboBoxModel;
 import java.sql.*;
+import java.util.ArrayList;
 
 
 /**
@@ -135,7 +137,7 @@ public class App extends javax.swing.JFrame {
         jTextField9 = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jC_B_Subjects = new javax.swing.JComboBox<>();
         jAdd_Subject_popup = new javax.swing.JButton();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
@@ -149,8 +151,9 @@ public class App extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jT_Class = new javax.swing.JTable();
         jTextField10 = new javax.swing.JTextField();
+        jB_Refrsh = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -178,6 +181,11 @@ public class App extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 204, 255));
         jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -600,7 +608,7 @@ public class App extends javax.swing.JFrame {
         jLabel17.setText("NIC");
 
         jLabel18.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel18.setText("First Name");
+        jLabel18.setText("Select Class ");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -640,7 +648,7 @@ public class App extends javax.swing.JFrame {
                             .addComponent(jLabel18)
                             .addGap(44, 44, 44)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(766, Short.MAX_VALUE))
+                .addContainerGap(763, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton3)
@@ -687,15 +695,19 @@ public class App extends javax.swing.JFrame {
         jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel20.setText("Select Subject");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jComboBox2.addItemListener(new java.awt.event.ItemListener() {
+        jC_B_Subjects.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                jComboBox2ItemStateChanged(evt);
+                jC_B_SubjectsItemStateChanged(evt);
             }
         });
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        jC_B_Subjects.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jC_B_SubjectsMouseClicked(evt);
+            }
+        });
+        jC_B_Subjects.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                jC_B_SubjectsActionPerformed(evt);
             }
         });
 
@@ -750,19 +762,34 @@ public class App extends javax.swing.JFrame {
 
         jButton8.setText("Cancel");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jT_Class.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Class Name", "Subject", "Start Time", "End Time"
+                "Class Name", "Subject", "Start Time", "End Time", "Fee"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jT_Class);
 
         jTextField10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField10ActionPerformed(evt);
+            }
+        });
+
+        jB_Refrsh.setText("Refresh Page");
+        jB_Refrsh.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jB_RefrshActionPerformed(evt);
             }
         });
 
@@ -779,7 +806,10 @@ public class App extends javax.swing.JFrame {
                                 .addComponent(jLabel19)
                                 .addGap(43, 43, 43)
                                 .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel15)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel15)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 263, Short.MAX_VALUE)
+                                .addComponent(jB_Refrsh))
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -807,10 +837,10 @@ public class App extends javax.swing.JFrame {
                             .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel20)
                                 .addGap(31, 31, 31)
-                                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jC_B_Subjects, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jAdd_Subject_popup)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 544, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -825,7 +855,9 @@ public class App extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel15)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel15)
+                            .addComponent(jB_Refrsh))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel19)
@@ -833,7 +865,7 @@ public class App extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jC_B_Subjects, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jAdd_Subject_popup))
                         .addGap(27, 27, 27)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1082,7 +1114,7 @@ public class App extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 503, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 503, Short.MAX_VALUE))
         );
 
         pack();
@@ -1151,9 +1183,9 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
+            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","u844237779_javaProject","java123@@@A");
             Statement st=con.createStatement();
-            boolean b=st.execute("INSERT INTO `studentmanagement`.`student` ( `S_NIC`, `S_First_Name`, `S_Last_Name`, `S_Year`, `S_Month`, `S_Day`, `S_Address_Number`, `S_Lane`, `S_City`) VALUES ( '"+jS_NIC.getText()+"', '"+jS_FName.getText()+"', '"+jS_LName.getText()+"', '"+jS_Year.getText()+"', '"+jS_Month.getText()+"', '"+jS_Day.getText()+"', '"+jS_Address.getText()+"', '"+jS_Lane.getText()+"', '"+jS_City.getText()+"');");
+            boolean b=st.execute("INSERT INTO `u844237779_java`.`student` ( `S_NIC`, `S_First_Name`, `S_Last_Name`, `S_Year`, `S_Month`, `S_Day`, `S_Address_Number`, `S_Lane`, `S_City`) VALUES ( '"+jS_NIC.getText()+"', '"+jS_FName.getText()+"', '"+jS_LName.getText()+"', '"+jS_Year.getText()+"', '"+jS_Month.getText()+"', '"+jS_Day.getText()+"', '"+jS_Address.getText()+"', '"+jS_Lane.getText()+"', '"+jS_City.getText()+"');");
             if(!b) {
                 JOptionPane.showMessageDialog(this, "inserted");
             }else {
@@ -1225,9 +1257,11 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField9ActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void jC_B_SubjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jC_B_SubjectsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+        
+
+    }//GEN-LAST:event_jC_B_SubjectsActionPerformed
 
     private void jAdd_Subject_popupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAdd_Subject_popupActionPerformed
         // TODO add your handling code here:
@@ -1319,7 +1353,7 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
          try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
+            Connection con=DriverManager.getConnection("jdbc:mysql://auth-db826.hstgr.io/u844237779_java","javaProject","java123@@@A");
             Statement st=con.createStatement();
             boolean b=st.execute("INSERT INTO `studentmanagement`.`teacher` ( `T_NIC`, `T_First_Name`, `T_second_Name`, `T_Address_Number`, `T_City`, `T_Road`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_Fname.getText()+"', '"+jT_Lname.getText()+"', '"+jT_address_no.getText()+"', '"+jT_City.getText()+"', '"+jT_Lane.getText()+"');");
             boolean c=st.execute("INSERT INTO `studentmanagement`.`t_number` ( `T_NIC`, `phone_number`) VALUES ( '"+jT_NIC.getText()+"', '"+jT_TPnumber.getText()+"' );");
@@ -1352,13 +1386,80 @@ public class App extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField10ActionPerformed
 
-    private void jComboBox2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jComboBox2ItemStateChanged
+    private void jC_B_SubjectsItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jC_B_SubjectsItemStateChanged
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ItemStateChanged
+    }//GEN-LAST:event_jC_B_SubjectsItemStateChanged
+
+    private void jC_B_SubjectsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jC_B_SubjectsMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jC_B_SubjectsMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        fillcombo();
+    }//GEN-LAST:event_formWindowOpened
+
+    private void jB_RefrshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_RefrshActionPerformed
+        // TODO add your handling code here:
+        fillcombo();
+        int subCount = 0;
+        ArrayList<String> sublist = new ArrayList<String>();
+        ResultSet subRes = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
+            Statement st=con.createStatement();
+            ResultSet res=st.executeQuery("SELECT `class_name`,`start_time`,`end_time`,`class_fee`,`sub_id` FROM `studentmanagement`.`class`;");
+            try{
+                Statement subSt=con.createStatement();
+                subRes=subSt.executeQuery("SELECT `sub_name` FROM `studentmanagement`.`class` INNER JOIN `studentmanagement`.`subject` ON `class`.`sub_id` = `subject`.`sub_id`;");
+                while (subRes.next()){
+                    sublist.add(subRes.getString("sub_name"));
+                }
+            }catch(Exception e) {
+                e.printStackTrace();
+            }
+            
+            while (res.next()){
+                String name = res.getString("class_name");
+                String stime = res.getString("start_time");
+                String etime = res.getString("end_time");
+                String fee = res.getString("class_fee");
+                System.out.println(sublist);
+                String sub = sublist.get(subCount);
+
+                String tbClassData[] = {name,sub,stime,etime,fee};
+                
+                DefaultTableModel tblClassModel = (DefaultTableModel)jT_Class.getModel();
+                tblClassModel.addRow(tbClassData);
+                subCount = subCount + 1;
+            }
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_jB_RefrshActionPerformed
 
     /**
      * @param args the command line arguments
      */
+    public void fillcombo(){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
+            Statement st=con.createStatement();
+            ResultSet res=st.executeQuery("SELECT `sub_id`,`sub_name` FROM `studentmanagement`.`subject`;");
+            Vector vector=new Vector();
+            while (res.next()){
+                vector.addElement(new Item(res.getInt("sub_id"),res.getString("sub_name")));
+            }
+            jC_B_Subjects.setModel(new DefaultComboBoxModel(vector));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1398,12 +1499,13 @@ public class App extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton S_Register_Cancel;
     private javax.swing.JButton jAdd_Subject_popup;
+    private javax.swing.JButton jB_Refrsh;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JComboBox<String> jC_B_Subjects;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox4;
     private javax.swing.JComboBox<String> jComboBox5;
     private javax.swing.JComboBox<String> jComboBox6;
@@ -1479,6 +1581,7 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jT_City;
+    private javax.swing.JTable jT_Class;
     private javax.swing.JTextField jT_Fname;
     private javax.swing.JTextField jT_Lane;
     private javax.swing.JTextField jT_Lname;
@@ -1488,9 +1591,23 @@ public class App extends javax.swing.JFrame {
     private javax.swing.JTextField jT_TPnumber;
     private javax.swing.JTextField jT_address_no;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField10;
     private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField jTextField9;
     // End of variables declaration//GEN-END:variables
+}
+
+class Item {
+    int id;
+    String name;
+    public Item(int id,String name) {
+        this.id=id;
+        this.name=name;
+    }
+    public int getId(){
+        return id;
+    }
+    public String toString() {
+        return name;
+    }
 }

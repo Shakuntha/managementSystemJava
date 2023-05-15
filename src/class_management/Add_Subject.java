@@ -40,6 +40,7 @@ public class Add_Subject extends javax.swing.JFrame {
         jAdd_S_Cancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Subject ID");
@@ -118,13 +119,16 @@ public class Add_Subject extends javax.swing.JFrame {
 
     private void jAdd_S_CancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAdd_S_CancelActionPerformed
         // TODO add your handling code here:
+        jTextField1.setText("");
+        jTextField2.setText("");
         dispose();
+//        App.fillcombo();
     }//GEN-LAST:event_jAdd_S_CancelActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement","root","1234");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement","root","Bingo456++");
             Statement st=con.createStatement();
             boolean b=st.execute("INSERT INTO `studentmanagement`.`subject` ( `Sub_Id`, `Sub_Name`) VALUES ( '"+jTextField1.getText()+"', '"+jTextField2.getText()+"');");
             if(!b) {
@@ -135,6 +139,9 @@ public class Add_Subject extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        dispose();
+        jTextField1.setText("");
+        jTextField2.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

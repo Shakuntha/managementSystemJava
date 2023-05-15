@@ -139,7 +139,7 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/studentmanagement","root","Bingo456++");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/studentmanagement","root","Bingo456++");
             Statement st=con.createStatement();
             ResultSet rs = st.executeQuery("SELECT * FROM `studentmanagement`.`admin` WHERE `admin_username` = '"+jLogin_Username.getText()+"'");
             boolean locked = true;
