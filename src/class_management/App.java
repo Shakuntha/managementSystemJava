@@ -1403,6 +1403,8 @@ public class App extends javax.swing.JFrame {
     private void jB_RefrshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jB_RefrshActionPerformed
         // TODO add your handling code here:
         fillcombo();
+        DefaultTableModel tblClassModel = (DefaultTableModel)jT_Class.getModel();
+        tblClassModel.setRowCount(0);
         int subCount = 0;
         ArrayList<String> sublist = new ArrayList<String>();
         ResultSet subRes = null;
@@ -1431,7 +1433,7 @@ public class App extends javax.swing.JFrame {
 
                 String tbClassData[] = {name,sub,stime,etime,fee};
                 
-                DefaultTableModel tblClassModel = (DefaultTableModel)jT_Class.getModel();
+                
                 tblClassModel.addRow(tbClassData);
                 subCount = subCount + 1;
             }
